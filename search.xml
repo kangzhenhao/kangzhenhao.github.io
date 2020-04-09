@@ -30,7 +30,7 @@
 <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br></pre></td></tr></table></figure>
 
 <p>如果配置好后没有及时生效的话可以先停止本地服务器运行，清除缓存在重新运行到本地服务器上：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo c // 清除缓存</span><br><span class="line">hexo g // 重新生成</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean // 清除缓存</span><br><span class="line">hexo g // 重新生成</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
 
 <p>浏览器重新刷新即可查看样式生效</p>
 <h3 id="新建博客文章"><a href="#新建博客文章" class="headerlink" title="新建博客文章"></a>新建博客文章</h3><p>当要写新的博客时，可以通过命令创建新的 .md 文件，文件保存在 source_posts 目录下：</p>
