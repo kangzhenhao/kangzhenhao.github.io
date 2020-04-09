@@ -73,6 +73,9 @@
 <p>默认情况下 next 主题会直接展示文章内容，如果文章多的话就需要滚动页面很长时间，可以在文章摘要和正文的中间添加一行注释，next 就会设置为只显示标题还摘要并生成一个阅读全文的按钮：</p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="comment">&lt;!--more--&gt;</span></span></span><br></pre></td></tr></table></figure>
 
+<p>编写完文档要推送到云端的时候，一定要执行清除缓存的命令和重新生成的命令再推送，否则不会推送成功</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>个人博客</category>

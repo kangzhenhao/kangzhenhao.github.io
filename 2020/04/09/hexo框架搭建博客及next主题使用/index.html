@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="直耿">
 <meta property="og:description" content="自从开始学习前端开发之后就一直想拥有一个自己的博客网站来记录自己的学习及生活，奈何技术问题这个愿望一直都没有实现。当以为自己翅膀硬了去面试前端开发职位的工作时被问到有没有自己的博客主页时顿时语塞，了解到有快速开发博客的框架后便决定自己动手搭一个。">
 <meta property="article:published_time" content="2020-04-09T08:30:25.740Z">
-<meta property="article:modified_time" content="2020-04-09T12:13:57.877Z">
+<meta property="article:modified_time" content="2020-04-09T12:18:02.263Z">
 <meta property="article:author" content="直耿">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="next">
@@ -445,6 +445,9 @@
 <p>注意：每个冒号后面必须要添加一个空格，否则会报错</p>
 <p>默认情况下 next 主题会直接展示文章内容，如果文章多的话就需要滚动页面很长时间，可以在文章摘要和正文的中间添加一行注释，next 就会设置为只显示标题还摘要并生成一个阅读全文的按钮：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="comment">&lt;!--more--&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>编写完文档要推送到云端的时候，一定要执行清除缓存的命令和重新生成的命令再推送，否则不会推送成功</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
 
 
       
