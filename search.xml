@@ -51,6 +51,28 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d // 推送</span><br></pre></td></tr></table></figure>
 
 <p>如果要提示需要输入用户名和密码则输入 Github 的账户密码即可</p>
+<p>部署完成功推送之后就可以通过仓库名直接访问自己的博客了</p>
+<p>如果更新了样式云服务器上的博客需要等一下才可以正常更新，如果没有更新则清除缓存重新生成在推送到仓库即可</p>
+<h3 id="next-主题配置"><a href="#next-主题配置" class="headerlink" title="next 主题配置"></a>next 主题配置</h3><p>next 主题默认的菜单已经有几项，可按照所需来配置：</p>
+<p>我个人则只选用下面几项，以为个人水平着实没有太多内容可以填充，日后需要再进行配置</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: &#x2F;|| home</span><br><span class="line">  tags: &#x2F;tags&#x2F;|| tags</span><br><span class="line">  categories: &#x2F;categories&#x2F;|| th</span><br><span class="line">  archives: &#x2F;archives&#x2F;|| archive</span><br></pre></td></tr></table></figure>
+
+<p>此时配置好了但是点击会有报错，因为默认配置下 /后面有一个空格，要删除才可以正常跳转页面</p>
+<p>tags 页面及 categories 页面需要新建才可以正常跳转，否则会报错：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new page <span class="string">"tags"</span></span><br><span class="line">hexo new page <span class="string">"categories"</span></span><br></pre></td></tr></table></figure>
+
+<p>执行完新建页面的命令之后，source 目录下就会创建对应的文件夹，文件夹里有一个 index.md 文件，修改里面的 types 项为指定页面：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">title: tags</span><br><span class="line">date: 2017-07-10 16:36:26</span><br><span class="line">type: "tags"</span><br><span class="line"></span><br><span class="line">--------</span><br><span class="line"></span><br><span class="line">title: tags</span><br><span class="line">date: 2017-07-10 16:36:26</span><br><span class="line">type: "categories"</span><br></pre></td></tr></table></figure>
+
+<p>修改完后页面就可以正常跳转了，同时功能 next 也自动配置好，对应的分类及标签会自动归类</p>
+<p>至于更多的 next 的配置可以参考官方文档或者论坛教程去配置，我自己需要这么多功能就够了</p>
+<h3 id="编写博客注意点"><a href="#编写博客注意点" class="headerlink" title="编写博客注意点"></a>编写博客注意点</h3><p>当执行完 new 命令后，生成的文件会有一个文件头一样的段落：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">title: 文章标题</span><br><span class="line">tags: 标签，可通过数组来添加多个标签</span><br><span class="line">categories: 分类</span><br></pre></td></tr></table></figure>
+
+<p>注意：每个冒号后面必须要添加一个空格，否则会报错</p>
+<p>默认情况下 next 主题会直接展示文章内容，如果文章多的话就需要滚动页面很长时间，可以在文章摘要和正文的中间添加一行注释，next 就会设置为只显示标题还摘要并生成一个阅读全文的按钮：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="comment">&lt;!--more--&gt;</span></span></span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>个人博客</category>
