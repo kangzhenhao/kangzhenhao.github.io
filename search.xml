@@ -1,6 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>HTML页面结构标签使用规范</title>
+    <url>/2020/04/10/HTML%E9%A1%B5%E9%9D%A2%E7%BB%93%E6%9E%84%E6%A0%87%E7%AD%BE%E4%BD%BF%E7%94%A8%E8%A7%84%E8%8C%83/</url>
+    <content><![CDATA[<p>本篇文章记录 HTML 页面结构标签的使用规范，html 标签使用一定要结构清晰，嵌套关系正确使用，也建议语义化使用标签。</p>
+<a id="more"></a>
+
+<h3 id="语义标签"><a href="#语义标签" class="headerlink" title="语义标签"></a>语义标签</h3><p>使用语义化标签开发看代码时就会很清晰，浏览器也好解析，养成好的代码习惯</p>
+<p><strong>描述页面头部或页眉：</strong></p>
+<p>但 header 不单单可以定义成一个网站的头部，也可以为一个区域的头部使用 header 标签来定义    </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">header</span>&gt;</span></span><br><span class="line">	...</span><br><span class="line"><span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>描述页面底部或页脚：</strong></p>
+<p>使用方式也同 header 标签基本一致</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">footer</span>&gt;</span></span><br><span class="line">	...</span><br><span class="line"><span class="tag">&lt;/<span class="name">footer</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>标题：</strong></p>
+<p>h1 ~ h6</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>...<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>...<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>...<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h4</span>&gt;</span>...<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h5</span>&gt;</span>...<span class="tag">&lt;/<span class="name">h5</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h6</span>&gt;</span>...<span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>导航或菜单：</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">nav</span>&gt;</span>...<span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>文章标签：</strong></p>
+<p>可以理解为一个独立的内容区域，跟别的区域没有相关影响的内容可以使用 articel 标签来定义</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">articel</span>&gt;</span>...<span class="tag">&lt;/<span class="name">articel</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>相似区域的组合：</strong></p>
+<p>当一个区域里面有很多内容是相似的块，可以使用 section 标签来定义</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">section</span>&gt;</span>...<span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>一些侧边的小位置或者侧边栏就可以使用 aside 标签来定义：</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">aside</span>&gt;</span>...<span class="tag">&lt;/<span class="name">aside</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>主页面：</strong></p>
+<p>这个标签一般只会出现一次，用来表示页面的主要区域内容</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">main</span>&gt;</span>...<span class="tag">&lt;/<span class="name">main</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>文本标签：</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>...<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>按用户输入内容格式输出：</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">pre</span>&gt;</span></span><br><span class="line">	...</span><br><span class="line"><span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>换行标签：</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>分界线、水平线：</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">hr</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>用于声明类文本：</strong></p>
+<p>使用这个标签后字体会变小</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">small</span>&gt;</span>...<span class="tag">&lt;/<span class="name">small</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>表示时间：</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">time</span>&gt;</span>...<span class="tag">&lt;/<span class="name">time</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>描述简写的内容：</strong></p>
+<p>设置了 title 属性之后鼠标放到上面会显示 title 的内容</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">abbr</span> <span class="attr">title</span>=<span class="string">"..."</span>&gt;</span>...<span class="tag">&lt;/<span class="name">abbr</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>上标 / 下标：</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">sup</span>&gt;</span>...<span class="tag">&lt;/<span class="name">sup</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">sub</span>&gt;</span>...<span class="tag">&lt;/<span class="name">sub</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>删除了的内容：</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">del</span>&gt;</span>...<span class="tag">&lt;/<span class="name">del</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>修正的内容：</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ins</span>&gt;</span>...<span class="tag">&lt;/<span class="name">ins</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>表示不准确的：</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">s</span>&gt;</span>...<span class="tag">&lt;/<span class="name">s</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>表示代码：</strong></p>
+<p>这个标签并不能真正的显示代码以及高亮，只是表示这里可以放代码，如果要实现代码高亮及显示需要配合插件来使用</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">code</span>&gt;</span>...<span class="tag">&lt;/<span class="name">code</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>表示进度条：</strong></p>
+<p>value 属性表示当前进度</p>
+<p>max 属性表示最大值</p>
+<p>标签里设置的文本默认不会展示，在浏览器不支持的情况下才会显示文本内容</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">progress</span> <span class="attr">value</span>=<span class="string">"30"</span> <span class="attr">max</span>=<span class="string">"100"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">progress</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>表示强调文本：</strong></p>
+<p>strong 类似文本加粗效果</p>
+<p>em 字体变成斜体</p>
+<p>mark 马克笔效果</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">strong</span>&gt;</span>。。。<span class="tag">&lt;/<span class="name">strong</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">em</span>&gt;</span>...<span class="tag">&lt;/<span class="name">em</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mark</span>&gt;</span>...<span class="tag">&lt;/<span class="name">mark</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>表示引用的作者：</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">cite</span>&gt;</span>...<span class="tag">&lt;/<span class="name">cite</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>表示摘要段落：</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">blockquote</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">blockquote</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>表示地址：</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">address</span>&gt;</span>...<span class="tag">&lt;/<span class="name">address</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="无语意标签"><a href="#无语意标签" class="headerlink" title="无语意标签"></a>无语意标签</h3><p><strong>表示一个区域或一个块：</strong></p>
+<p>div 标签也是使用最多的标签，当页面一个区域语义不太清晰的时候，就可以使用 div 标签进行包裹</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>对一段文本进行独立控制：</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>...<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="meta-标签"><a href="#meta-标签" class="headerlink" title="meta 标签"></a>meta 标签</h3><p>设置字符编码，推荐使用 utf-8，包含字符更广：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>设置搜索引擎关键词：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keyword"</span> <span class="attr">content</span>=<span class="string">"..."</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>设置网站摘要：</p>
+<p>可以建议在摘要最后面加上练习电话，这样可以省去点开网站在找到电话这一步骤</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"description"</span> <span class="attr">content</span>=<span class="string">"..."</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>HTML</category>
+      </categories>
+      <tags>
+        <tag>HTML</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HTML基础知识笔记</title>
+    <url>/2020/04/10/HTML%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>由于个人基础较为薄弱，所以决定重新学习前端基本内容，并将学习所了解到的内容发布到自己的博客上进行保存，即可供他人查看，也可自己翻阅</p>
+<a id="more"></a>
+
+<h3 id="使用软件"><a href="#使用软件" class="headerlink" title="使用软件"></a>使用软件</h3><p>个人学习及使用的编辑器为 vscode，开源跨平台及免费，同时插件非常多，前端开发推荐编辑器</p>
+<p>浏览器推荐谷歌浏览器，功能强大而且插件十分的多，同时兼容性十分的好</p>
+<h3 id="文件命名规范"><a href="#文件命名规范" class="headerlink" title="文件命名规范"></a>文件命名规范</h3><p>使用字母数字下划线都可以，尽量不要使用中文，因为中文是宽字节，在不同的操作系统上可能会出现问题</p>
+<p>扩展名为 html 或者 htm，因为早期的系统不支持4位扩展名，现在已经普遍支持，规范最好使用 html</p>
+<h3 id="标签概念"><a href="#标签概念" class="headerlink" title="标签概念"></a>标签概念</h3><p>使用 html 标签将内容包裹起来，就可以进行细节化的操作和设置</p>
+<p>使用标签尽量语义化，这样浏览器解析会更好一些</p>
+<h3 id="统一资源定义符-URL"><a href="#统一资源定义符-URL" class="headerlink" title="统一资源定义符 URL"></a>统一资源定义符 URL</h3><p>访问到服务器的文件需要一个地址来访问，这个地址就可以理解为 URL</p>
+<p>https：传输协议，比如访问网页一般使用 http 或者 https，上传下载 ftp、远程登录 ssh</p>
+<ul>
+<li>https 属于加密传输协议，推荐使用，需要相应的证书</li>
+<li>http 相比之下就不安全，一些浏览器会有提示没有使用 https 不安全的图标或文字</li>
+</ul>
+<p>域名：主机地址，会通过 DNS 协议解析成 IP 地址，根据 IP 地址来找到对应的服务器</p>
+<p>端口：如果是本地启动的话默认是80端口，看个人情况而定</p>
+<p>域名后面的是文件路径资源，一些网站会显示为文件目录</p>
+<h3 id="文件路径访问规则"><a href="#文件路径访问规则" class="headerlink" title="文件路径访问规则"></a>文件路径访问规则</h3><p><strong>相对路径：</strong></p>
+<p>.. ：返回上一级</p>
+<p>如果是兄弟文件，访问的话可以直接输入对应的目录或文件名即可，也可以加 ./ 来访问</p>
+<p>./ ：表示当前目录</p>
+<p><strong>绝对路径：</strong></p>
+<p>/ ：表示根路径</p>
+<p>使用绝对路径要输入完整的路径才可以正常访问</p>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 这个是HTML注释 --&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>写代码的好习惯就是在必要的地方加上注释，代码不光是让机器去运行的，也是要人看的，代码最好做到可阅读、可维护</p>
+]]></content>
+      <categories>
+        <category>HTML</category>
+      </categories>
+      <tags>
+        <tag>HTML</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo框架搭建博客及next主题使用</title>
     <url>/2020/04/09/hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%8F%8Anext%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<p>自从开始学习前端开发之后就一直想拥有一个自己的博客网站来记录自己的学习及生活，奈何技术问题这个愿望一直都没有实现。当以为自己翅膀硬了去面试前端开发职位的工作时被问到有没有自己的博客主页时顿时语塞，了解到有快速开发博客的框架后便决定自己动手搭一个。</p>
@@ -83,28 +244,6 @@
       <tags>
         <tag>hexo</tag>
         <tag>next</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>崩溃边缘</title>
-    <url>/2020/04/09/%E5%B4%A9%E6%BA%83%E8%BE%B9%E7%BC%98/</url>
-    <content><![CDATA[<p>最近疫情期间出来找工作，虽说国内疫情的情况已经开始好转了很多，但是目前就业方面还是很难找工作，或者说自己好高骛远，眼高手低才没有办法找到工作…</p>
-<a id="more"></a>
-
-<h3 id="心情低下"><a href="#心情低下" class="headerlink" title="心情低下"></a>心情低下</h3><p>今天的心情可以说是极差无比，投简历的公司来电话面试，结果问我的问题基本就两个字 “不会” … 前端就会一个 Vue 框架，后端不会 Node 也不会正统的后端语言，给到的答复是我这种零基础的基本上是很难带的便把电话挂了。</p>
-<p>昨天面试的外包公司来电说可以给我去试试，但是经过刚刚电话的面试，我内心对前端的最后一丝自信已经彻彻底底的消失了，便拒绝了试用的工作，或者说之前面试的时候面试题没做几道出来，以及面试我的人对我的态度就像看傻子一样看所以才觉得不想去的吧，更何况公司还很远，便打消了过去的欲望。</p>
-<p>现在内心完全是崩溃的…</p>
-<h3 id="看房插曲"><a href="#看房插曲" class="headerlink" title="看房插曲"></a>看房插曲</h3><p>接完两个公司的电话准备吃饭的时候，说旁边二楼有租房可以去看看房子怎么样，便带着受挫的心情过去了，房东是一个化着很奇怪妆的阿姨，话说的很多还快还听不清楚说什么，带去看房子只有一间房居然租金就已经到了1800，如果我和我妈两个人一起合租都感觉很勉强去付租金，更别说这么小一间房两个人住了。而且没有独立卫生间，不能自己拉网线，这样的房子住着也不方便。</p>
-<p>本来心情就不好还有被房东像机关枪一样对着说半天，要是天天有人这样跟我说话，那我不如死了算了！</p>
-<h3 id="随便看看"><a href="#随便看看" class="headerlink" title="随便看看"></a>随便看看</h3><p>我并不想呆在深圳，没有朋友，而且生活压力那么大，我这种废物可能完全没办法在这种城市活下去吧，我想搬去广州和同学一起合租，但是我搬过去之后要是也找不到工作呢，我走了之后我妈一个人怎么租得起深圳的房子呢？我现在连自己的想法是什么，喜欢做什么，能去做什么我都不知道，完全没有好好的审视过自己，也没有好好的提升过自己，什么都不会却一副高高在上的样子，不会也不愿意跟他人交流，我到底能做好什么？</p>
-<p>现在重新开始，还来得及吗？</p>
-<p>我这种人，真的可以吗？</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
       </tags>
   </entry>
 </search>
