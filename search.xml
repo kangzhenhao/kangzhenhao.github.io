@@ -1,45 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>HTML基础知识笔记</title>
-    <url>/2020/04/10/HTML%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>由于个人基础较为薄弱，所以决定重新学习前端基本内容，并将学习所了解到的内容发布到自己的博客上进行保存，即可供他人查看，也可自己翻阅</p>
-<a id="more"></a>
-
-<h3 id="使用软件"><a href="#使用软件" class="headerlink" title="使用软件"></a>使用软件</h3><p>个人学习及使用的编辑器为 vscode，开源跨平台及免费，同时插件非常多，前端开发推荐编辑器</p>
-<p>浏览器推荐谷歌浏览器，功能强大而且插件十分的多，同时兼容性十分的好</p>
-<h3 id="文件命名规范"><a href="#文件命名规范" class="headerlink" title="文件命名规范"></a>文件命名规范</h3><p>使用字母数字下划线都可以，尽量不要使用中文，因为中文是宽字节，在不同的操作系统上可能会出现问题</p>
-<p>扩展名为 html 或者 htm，因为早期的系统不支持4位扩展名，现在已经普遍支持，规范最好使用 html</p>
-<h3 id="标签概念"><a href="#标签概念" class="headerlink" title="标签概念"></a>标签概念</h3><p>使用 html 标签将内容包裹起来，就可以进行细节化的操作和设置</p>
-<p>使用标签尽量语义化，这样浏览器解析会更好一些</p>
-<h3 id="统一资源定义符-URL"><a href="#统一资源定义符-URL" class="headerlink" title="统一资源定义符 URL"></a>统一资源定义符 URL</h3><p>访问到服务器的文件需要一个地址来访问，这个地址就可以理解为 URL</p>
-<p>https：传输协议，比如访问网页一般使用 http 或者 https，上传下载 ftp、远程登录 ssh</p>
-<ul>
-<li>https 属于加密传输协议，推荐使用，需要相应的证书</li>
-<li>http 相比之下就不安全，一些浏览器会有提示没有使用 https 不安全的图标或文字</li>
-</ul>
-<p>域名：主机地址，会通过 DNS 协议解析成 IP 地址，根据 IP 地址来找到对应的服务器</p>
-<p>端口：如果是本地启动的话默认是80端口，看个人情况而定</p>
-<p>域名后面的是文件路径资源，一些网站会显示为文件目录</p>
-<h3 id="文件路径访问规则"><a href="#文件路径访问规则" class="headerlink" title="文件路径访问规则"></a>文件路径访问规则</h3><p><strong>相对路径：</strong></p>
-<p>.. ：返回上一级</p>
-<p>如果是兄弟文件，访问的话可以直接输入对应的目录或文件名即可，也可以加 ./ 来访问</p>
-<p>./ ：表示当前目录</p>
-<p><strong>绝对路径：</strong></p>
-<p>/ ：表示根路径</p>
-<p>使用绝对路径要输入完整的路径才可以正常访问</p>
-<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 这个是HTML注释 --&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>写代码的好习惯就是在必要的地方加上注释，代码不光是让机器去运行的，也是要人看的，代码最好做到可阅读、可维护</p>
-]]></content>
-      <categories>
-        <category>HTML</category>
-      </categories>
-      <tags>
-        <tag>HTML</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>HTML页面结构标签使用规范</title>
     <url>/2020/04/10/HTML%E9%A1%B5%E9%9D%A2%E7%BB%93%E6%9E%84%E6%A0%87%E7%AD%BE%E4%BD%BF%E7%94%A8%E8%A7%84%E8%8C%83/</url>
     <content><![CDATA[<p>本篇文章记录 HTML 页面结构标签的使用规范，html 标签使用一定要结构清晰，嵌套关系正确使用，也建议语义化使用标签。</p>
@@ -153,6 +114,85 @@
 <p>可以建议在摘要最后面加上练习电话，这样可以省去点开网站在找到电话这一步骤</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"description"</span> <span class="attr">content</span>=<span class="string">"..."</span>/&gt;</span></span><br></pre></td></tr></table></figure>
 
+]]></content>
+      <categories>
+        <category>HTML</category>
+      </categories>
+      <tags>
+        <tag>HTML</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>好用开发库推荐</title>
+    <url>/2020/04/18/%E5%A5%BD%E7%94%A8%E5%BC%80%E5%8F%91%E5%BA%93%E6%8E%A8%E8%8D%90/</url>
+    <content><![CDATA[<p>开发可能会使用到的库，记录下来方便需要时查询。</p>
+<a id="more"></a>
+
+<p>jQuery：js扩展库</p>
+<p>mpvue：使用vue开发小程序框架</p>
+<p>ElementUI：饿了么团队开发，面对PC端ui组件库</p>
+<p>MintUI：饿了么团队开发，面对手机端ui组件库</p>
+<p>BetterScroll：轻量级滑动库</p>
+<p>swiper：滑动库</p>
+<p>Echarts：百度可视化图标库</p>
+<p>layui：面对后端工程师的ui库</p>
+<p>EasyUI：依赖jQuery的ui库</p>
+<p>Animate.css：css3动画库</p>
+<p>magic.css：css3动画库</p>
+<p>Hover.css：hover鼠标悬停效果</p>
+<p>Moment.js：时间格式化库</p>
+<p>loadas：js工具库，降低数组，字符串，对象等使用难度</p>
+<p>Nprogress: 页面顶部加载时出现进度条</p>
+<p>vue-quill-editor: 基于Vue使用的富文本编辑器</p>
+<p>marked.js: 在线转换mackdown为html</p>
+<p>showdown: 在线转换mackdown为html</p>
+<p>mavon-editor：网页markdown富文本编辑器插件 —&gt; 推荐</p>
+<p>sspai.css：少数派markdown样式表</p>
+<p>hightlight.js：代码高亮框架</p>
+<p>vue-element-admin: vue 后台管理系统</p>
+<p>iview：高质量的 UI 组件库</p>
+<p>muse-ui：三端样式一致的响应式 UI 库</p>
+<p>socket.io：实时通信聊天库</p>
+<p>normalize.css: 比reset兼容性更好的初始化样式表</p>
+]]></content>
+      <categories>
+        <category>推荐</category>
+      </categories>
+      <tags>
+        <tag>推荐</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HTML基础知识笔记</title>
+    <url>/2020/04/10/HTML%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>由于个人基础较为薄弱，所以决定重新学习前端基本内容，并将学习所了解到的内容发布到自己的博客上进行保存，即可供他人查看，也可自己翻阅</p>
+<a id="more"></a>
+
+<h3 id="使用软件"><a href="#使用软件" class="headerlink" title="使用软件"></a>使用软件</h3><p>个人学习及使用的编辑器为 vscode，开源跨平台及免费，同时插件非常多，前端开发推荐编辑器</p>
+<p>浏览器推荐谷歌浏览器，功能强大而且插件十分的多，同时兼容性十分的好</p>
+<h3 id="文件命名规范"><a href="#文件命名规范" class="headerlink" title="文件命名规范"></a>文件命名规范</h3><p>使用字母数字下划线都可以，尽量不要使用中文，因为中文是宽字节，在不同的操作系统上可能会出现问题</p>
+<p>扩展名为 html 或者 htm，因为早期的系统不支持4位扩展名，现在已经普遍支持，规范最好使用 html</p>
+<h3 id="标签概念"><a href="#标签概念" class="headerlink" title="标签概念"></a>标签概念</h3><p>使用 html 标签将内容包裹起来，就可以进行细节化的操作和设置</p>
+<p>使用标签尽量语义化，这样浏览器解析会更好一些</p>
+<h3 id="统一资源定义符-URL"><a href="#统一资源定义符-URL" class="headerlink" title="统一资源定义符 URL"></a>统一资源定义符 URL</h3><p>访问到服务器的文件需要一个地址来访问，这个地址就可以理解为 URL</p>
+<p>https：传输协议，比如访问网页一般使用 http 或者 https，上传下载 ftp、远程登录 ssh</p>
+<ul>
+<li>https 属于加密传输协议，推荐使用，需要相应的证书</li>
+<li>http 相比之下就不安全，一些浏览器会有提示没有使用 https 不安全的图标或文字</li>
+</ul>
+<p>域名：主机地址，会通过 DNS 协议解析成 IP 地址，根据 IP 地址来找到对应的服务器</p>
+<p>端口：如果是本地启动的话默认是80端口，看个人情况而定</p>
+<p>域名后面的是文件路径资源，一些网站会显示为文件目录</p>
+<h3 id="文件路径访问规则"><a href="#文件路径访问规则" class="headerlink" title="文件路径访问规则"></a>文件路径访问规则</h3><p><strong>相对路径：</strong></p>
+<p>.. ：返回上一级</p>
+<p>如果是兄弟文件，访问的话可以直接输入对应的目录或文件名即可，也可以加 ./ 来访问</p>
+<p>./ ：表示当前目录</p>
+<p><strong>绝对路径：</strong></p>
+<p>/ ：表示根路径</p>
+<p>使用绝对路径要输入完整的路径才可以正常访问</p>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 这个是HTML注释 --&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>写代码的好习惯就是在必要的地方加上注释，代码不光是让机器去运行的，也是要人看的，代码最好做到可阅读、可维护</p>
 ]]></content>
       <categories>
         <category>HTML</category>
