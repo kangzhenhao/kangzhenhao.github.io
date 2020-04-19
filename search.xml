@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>vue项目引入axios报错：Uncaught (in promise) TypeError: Cannot read property &#39;protocol&#39; of undefined</title>
+    <url>/2020/04/19/vue%E9%A1%B9%E7%9B%AE%E5%BC%95%E5%85%A5axios%E6%8A%A5%E9%94%99%EF%BC%9AUncaught-in-promise-TypeError-Cannot-read-property-protocol-of-undefined/</url>
+    <content><![CDATA[<p>使用 vue 写项目的时候需要用到 axios 来发送请求，在 main.js 文件引入 axios 之后发现控制台提示了这个报错：Uncaught (in promise) TypeError: Cannot read property ‘protocol’ of undefined</p>
+<a id="more"></a>
+
+<p><img src="https://img-blog.csdn.net/20181004130457769?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjQ3MDc5MQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="vue error"></p>
+<p>根据查询得知是使用 axios 的方式不对，我在 main.js 中 import 引入了axios 后使用了 Vue.use(axios) 来使用axios 才导致报错：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import axios from &#39;axios&#39;</span><br><span class="line">Vue.use(axios) &#x2F;&#x2F; 报错原因</span><br></pre></td></tr></table></figure>
+
+<p>axios 不可以通过 Vue.use() 来使用，需要将其添加到 Vue 的原型链里才可以正常使用不会报错</p>
+<p>修改方式：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import axios from &#39;axios&#39;</span><br><span class="line">Vue.prototype.$http &#x3D; axios &#x2F;&#x2F; 这样就不会报错了</span><br></pre></td></tr></table></figure>
+
+
+
+<p>这个算是在使用中踩过的坑，记录下来引以为鉴。</p>
+]]></content>
+      <categories>
+        <category>vue</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo框架搭建博客及next主题使用</title>
     <url>/2020/04/09/hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%8F%8Anext%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<p>自从开始学习前端开发之后就一直想拥有一个自己的博客网站来记录自己的学习及生活，奈何技术问题这个愿望一直都没有实现。当以为自己翅膀硬了去面试前端开发职位的工作时被问到有没有自己的博客主页时顿时语塞，了解到有快速开发博客的框架后便决定自己动手搭一个。</p>
@@ -205,31 +230,6 @@
       </categories>
       <tags>
         <tag>HTML</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>vue项目引入axios报错：Uncaught (in promise) TypeError: Cannot read property &#39;protocol&#39; of undefined</title>
-    <url>/2020/04/19/vue%E9%A1%B9%E7%9B%AE%E5%BC%95%E5%85%A5axios%E6%8A%A5%E9%94%99%EF%BC%9AUncaught-in-promise-TypeError-Cannot-read-property-protocol-of-undefined/</url>
-    <content><![CDATA[<p>使用 vue 写项目的时候需要用到 axios 来发送请求，在 main.js 文件引入 axios 之后发现控制台报错了</p>
-<p>![vue error](D:\web-learning\blog\public\images\vue error.png)</p>
-<a id="more"></a>
-
-<p>根据查询得知是使用 axios 的方式不对，我在 main.js 中 import 引入了axios 后使用了 Vue.use(axios) 来使用axios 才导致报错：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import axios from &#39;axios&#39;</span><br><span class="line">Vue.use(axios) &#x2F;&#x2F; 报错原因</span><br></pre></td></tr></table></figure>
-
-<p>axios 不可以通过 Vue.use() 来使用，需要将其添加到 Vue 的原型链里才可以正常使用不会报错</p>
-<p>修改方式：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import axios from &#39;axios&#39;</span><br><span class="line">Vue.prototype.$http &#x3D; axios &#x2F;&#x2F; 这样就不会报错了</span><br></pre></td></tr></table></figure>
-
-
-
-<p>这个算是在使用中踩过的坑，记录下来引以为鉴。</p>
-]]></content>
-      <categories>
-        <category>vue</category>
-      </categories>
-      <tags>
-        <tag>vue</tag>
       </tags>
   </entry>
   <entry>
