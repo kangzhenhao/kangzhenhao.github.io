@@ -1,6 +1,156 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>hexo框架搭建博客及next主题使用</title>
+    <url>/2020/04/09/hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%8F%8Anext%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<p>自从开始学习前端开发之后就一直想拥有一个自己的博客网站来记录自己的学习及生活，奈何技术问题这个愿望一直都没有实现。当以为自己翅膀硬了去面试前端开发职位的工作时被问到有没有自己的博客主页时顿时语塞，了解到有快速开发博客的框架后便决定自己动手搭一个。</p>
+<a id="more"></a>
+
+<h2 id="框架选择"><a href="#框架选择" class="headerlink" title="框架选择"></a>框架选择</h2><p>搭建博客前了解到有不少框架可以使用，例如 hexo、hugo 和 wordpress 等等，看了介绍 hexo 的插件比较多，而且刚好在B站看到一个up主“程序羊”有出一个完整的搭建视频教程，而且 hexo 比较火热，很多问题网上都可以找到解决方法，便决定选用了 hexo 来搭建自己的博客</p>
+<h2 id="安装-hexo"><a href="#安装-hexo" class="headerlink" title="安装 hexo"></a>安装 hexo</h2><p>安装 hexo 之前要配置好 node.js 环境，由于我个人已经安装好环境，所以就直接通过 npm 来全局安装：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm i hexo -g</span><br></pre></td></tr></table></figure>
+
+<p>安装好之后可以可以通过 hexo -v 命令来查看是否安装成功及当前的版本号</p>
+<h3 id="初始化博客"><a href="#初始化博客" class="headerlink" title="初始化博客"></a>初始化博客</h3><p>成功安装之后进行初始化：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+
+<p>初始化完成之后就会生成一个默认的模板，基本的功能及样式都会配置好</p>
+<p>通过命令运行当前博客在本地服务器 4000 端口号预览：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<p>浏览器输入 localhost:4000 可正常运行，初始化后有一篇默认的 hexo 命令文章</p>
+<!--注：必须要有一篇文章才可以正常运行，否则浏览器会报错-->
+
+<h3 id="设置博客样式"><a href="#设置博客样式" class="headerlink" title="设置博客样式"></a>设置博客样式</h3><p>初始化后博客有个默认的样式 landscape，默认样式很多时候并不能满足自己的需求，我个人就比较喜欢极简的风格，所以决定选用 next 主题</p>
+<p>next 主题下载：</p>
+<p>主题都是保存在目录 themes/next 下</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+
+<p>下载好 next 样式之后，在根目录下的 _config.yml 配置 next 主题使其生效：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br></pre></td></tr></table></figure>
+
+<p>如果配置好后没有及时生效的话可以先停止本地服务器运行，清除缓存在重新运行到本地服务器上：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean // 清除缓存</span><br><span class="line">hexo g // 重新生成</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<p>浏览器重新刷新即可查看样式生效</p>
+<h3 id="新建博客文章"><a href="#新建博客文章" class="headerlink" title="新建博客文章"></a>新建博客文章</h3><p>当要写新的博客时，可以通过命令创建新的 .md 文件，文件保存在 source_posts 目录下：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo n <span class="string">"博客文章名称"</span></span><br></pre></td></tr></table></figure>
+
+<p>新建完之后可以直接通过命令进入到保存博客的文件下通过 vim 编辑器进行文章编写，或者直接用 vscode 或者 Typora 编辑器打开编写内容</p>
+<p>写完之后如果本地服务器没有刷新可以 hexo c 清除缓存重新运行即可</p>
+<p>如果要删除博客文章的话 hexo 没有删除博客的命令，可以直接到目录下删除文件就可以正常删除</p>
+<h3 id="将博客站点部署到-Github-上访问"><a href="#将博客站点部署到-Github-上访问" class="headerlink" title="将博客站点部署到 Github 上访问"></a>将博客站点部署到 Github 上访问</h3><p>如果搭建博客只在自己服务器上运行的话就太没劲了，但是如果要部署到云服务器上又要花钱购买服务器，我个人比较穷就不想去买，可以将博客免费挂载到 Github 仓库上通过仓库地址访问</p>
+<p>首先先登陆 Github 创建一个仓库，仓库名称一定要跟你 Github 的账户名一致，比如我的 GitHub 账户名为 kangzhenhao，那仓库的名称就要命名为 kangzhenhao.github.io</p>
+<p>如果要部署上要安装 hexo 的部署插件：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm i hexo-deployer-git -S</span><br></pre></td></tr></table></figure>
+
+<p>安装好后修改配置文件  _config.yml 的一项：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">仓库链接地址</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+
+<p>然后重新编译，并推送到 Github 仓库中：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d // 推送</span><br></pre></td></tr></table></figure>
+
+<p>如果要提示需要输入用户名和密码则输入 Github 的账户密码即可</p>
+<p>部署完成功推送之后就可以通过仓库名直接访问自己的博客了</p>
+<p>如果更新了样式云服务器上的博客需要等一下才可以正常更新，如果没有更新则清除缓存重新生成在推送到仓库即可</p>
+<h3 id="next-主题配置"><a href="#next-主题配置" class="headerlink" title="next 主题配置"></a>next 主题配置</h3><p>next 主题默认的菜单已经有几项，可按照所需来配置：</p>
+<p>我个人则只选用下面几项，以为个人水平着实没有太多内容可以填充，日后需要再进行配置</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: &#x2F;|| home</span><br><span class="line">  tags: &#x2F;tags&#x2F;|| tags</span><br><span class="line">  categories: &#x2F;categories&#x2F;|| th</span><br><span class="line">  archives: &#x2F;archives&#x2F;|| archive</span><br></pre></td></tr></table></figure>
+
+<p>此时配置好了但是点击会有报错，因为默认配置下 /后面有一个空格，要删除才可以正常跳转页面</p>
+<p>tags 页面及 categories 页面需要新建才可以正常跳转，否则会报错：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new page <span class="string">"tags"</span></span><br><span class="line">hexo new page <span class="string">"categories"</span></span><br></pre></td></tr></table></figure>
+
+<p>执行完新建页面的命令之后，source 目录下就会创建对应的文件夹，文件夹里有一个 index.md 文件，修改里面的 types 项为指定页面：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">title: tags</span><br><span class="line">date: 2017-07-10 16:36:26</span><br><span class="line">type: "tags"</span><br><span class="line"></span><br><span class="line">--------</span><br><span class="line"></span><br><span class="line">title: tags</span><br><span class="line">date: 2017-07-10 16:36:26</span><br><span class="line">type: "categories"</span><br></pre></td></tr></table></figure>
+
+<p>修改完后页面就可以正常跳转了，同时功能 next 也自动配置好，对应的分类及标签会自动归类</p>
+<p>至于更多的 next 的配置可以参考官方文档或者论坛教程去配置，我自己需要这么多功能就够了</p>
+<h3 id="编写博客注意点"><a href="#编写博客注意点" class="headerlink" title="编写博客注意点"></a>编写博客注意点</h3><p>当执行完 new 命令后，生成的文件会有一个文件头一样的段落：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">title: 文章标题</span><br><span class="line">tags: 标签，可通过数组来添加多个标签</span><br><span class="line">categories: 分类</span><br></pre></td></tr></table></figure>
+
+<p>注意：每个冒号后面必须要添加一个空格，否则会报错</p>
+<p>默认情况下 next 主题会直接展示文章内容，如果文章多的话就需要滚动页面很长时间，可以在文章摘要和正文的中间添加一行注释，next 就会设置为只显示标题还摘要并生成一个阅读全文的按钮：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="comment">&lt;!--more--&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>编写完文档要推送到云端的时候，一定要执行清除缓存的命令和重新生成的命令再推送，否则不会推送成功</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>个人博客</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>next</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vue项目引入axios控制台提示报错</title>
+    <url>/2020/04/19/vue%E9%A1%B9%E7%9B%AE%E5%BC%95%E5%85%A5axios%E6%8A%A5%E9%94%99%EF%BC%9AUncaught-in-promise-TypeError-Cannot-read-property-protocol-of-undefined/</url>
+    <content><![CDATA[<p>使用 vue 写项目的时候需要用到 axios 来发送请求，在 main.js 文件引入 axios 之后发现控制台提示了这个报错：Uncaught (in promise) TypeError: Cannot read property ‘protocol’ of undefined</p>
+<a id="more"></a>
+
+<p><img src="https://img-blog.csdn.net/20181004130457769?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjQ3MDc5MQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="vue error"></p>
+<p>根据查询得知是使用 axios 的方式不对，我在 main.js 中 import 引入了axios 后使用了 Vue.use(axios) 来使用axios 才导致报错：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import axios from &#39;axios&#39;</span><br><span class="line">Vue.use(axios) &#x2F;&#x2F; 报错原因</span><br></pre></td></tr></table></figure>
+
+<p>axios 不可以通过 Vue.use() 来使用，需要将其添加到 Vue 的原型链里才可以正常使用不会报错</p>
+<p>修改方式：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import axios from &#39;axios&#39;</span><br><span class="line">Vue.prototype.$http &#x3D; axios &#x2F;&#x2F; 这样就不会报错了</span><br></pre></td></tr></table></figure>
+
+
+
+<p>这个算是在使用中踩过的坑，记录下来引以为鉴。</p>
+]]></content>
+      <categories>
+        <category>vue</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>好用开发库推荐</title>
+    <url>/2020/04/18/%E5%A5%BD%E7%94%A8%E5%BC%80%E5%8F%91%E5%BA%93%E6%8E%A8%E8%8D%90/</url>
+    <content><![CDATA[<p>开发可能会使用到的库以及插件，个人觉得部分很实用，记录下来方便需要时查询，其中包括 UI 库，滑动库，JS 工具等等。</p>
+<a id="more"></a>
+
+<p>jQuery：js扩展库</p>
+<p>mpvue：使用vue开发小程序框架</p>
+<p>ElementUI：饿了么团队开发，面对PC端ui组件库</p>
+<p>MintUI：饿了么团队开发，面对手机端ui组件库</p>
+<p>BetterScroll：轻量级滑动库</p>
+<p>swiper：滑动库</p>
+<p>Echarts：百度可视化图标库</p>
+<p>layui：面对后端工程师的ui库</p>
+<p>EasyUI：依赖jQuery的ui库</p>
+<p>Animate.css：css3动画库</p>
+<p>magic.css：css3动画库</p>
+<p>Hover.css：hover鼠标悬停效果</p>
+<p>Moment.js：时间格式化库</p>
+<p>loadas：js工具库，降低数组，字符串，对象等使用难度</p>
+<p>Nprogress: 页面顶部加载时出现进度条</p>
+<p>vue-quill-editor: 基于Vue使用的富文本编辑器</p>
+<p>marked.js: 在线转换mackdown为html</p>
+<p>showdown: 在线转换mackdown为html</p>
+<p>mavon-editor：网页markdown富文本编辑器插件 —&gt; 推荐</p>
+<p>sspai.css：少数派markdown样式表</p>
+<p>hightlight.js：代码高亮框架</p>
+<p>vue-element-admin: vue 后台管理系统</p>
+<p>iview：高质量的 UI 组件库</p>
+<p>muse-ui：三端样式一致的响应式 UI 库</p>
+<p>socket.io：实时通信聊天库</p>
+<p>normalize.css: 比reset兼容性更好的初始化样式表</p>
+]]></content>
+      <categories>
+        <category>推荐</category>
+      </categories>
+      <tags>
+        <tag>推荐</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>HTML页面结构标签使用规范</title>
     <url>/2020/04/10/HTML%E9%A1%B5%E9%9D%A2%E7%BB%93%E6%9E%84%E6%A0%87%E7%AD%BE%E4%BD%BF%E7%94%A8%E8%A7%84%E8%8C%83/</url>
     <content><![CDATA[<p>本篇文章记录 HTML 页面结构标签的使用规范，html 标签使用一定要结构清晰，嵌套关系正确使用，也建议语义化使用标签。</p>
@@ -123,71 +273,6 @@
       </tags>
   </entry>
   <entry>
-    <title>vue项目引入axios控制台提示报错</title>
-    <url>/2020/04/19/vue%E9%A1%B9%E7%9B%AE%E5%BC%95%E5%85%A5axios%E6%8A%A5%E9%94%99%EF%BC%9AUncaught-in-promise-TypeError-Cannot-read-property-protocol-of-undefined/</url>
-    <content><![CDATA[<p>使用 vue 写项目的时候需要用到 axios 来发送请求，在 main.js 文件引入 axios 之后发现控制台提示了这个报错：Uncaught (in promise) TypeError: Cannot read property ‘protocol’ of undefined</p>
-<a id="more"></a>
-
-<p><img src="https://img-blog.csdn.net/20181004130457769?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjQ3MDc5MQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="vue error"></p>
-<p>根据查询得知是使用 axios 的方式不对，我在 main.js 中 import 引入了axios 后使用了 Vue.use(axios) 来使用axios 才导致报错：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import axios from &#39;axios&#39;</span><br><span class="line">Vue.use(axios) &#x2F;&#x2F; 报错原因</span><br></pre></td></tr></table></figure>
-
-<p>axios 不可以通过 Vue.use() 来使用，需要将其添加到 Vue 的原型链里才可以正常使用不会报错</p>
-<p>修改方式：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import axios from &#39;axios&#39;</span><br><span class="line">Vue.prototype.$http &#x3D; axios &#x2F;&#x2F; 这样就不会报错了</span><br></pre></td></tr></table></figure>
-
-
-
-<p>这个算是在使用中踩过的坑，记录下来引以为鉴。</p>
-]]></content>
-      <categories>
-        <category>vue</category>
-      </categories>
-      <tags>
-        <tag>vue</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>好用开发库推荐</title>
-    <url>/2020/04/18/%E5%A5%BD%E7%94%A8%E5%BC%80%E5%8F%91%E5%BA%93%E6%8E%A8%E8%8D%90/</url>
-    <content><![CDATA[<p>开发可能会使用到的库以及插件，个人觉得部分很实用，记录下来方便需要时查询，其中包括 UI 库，滑动库，JS 工具等等。</p>
-<a id="more"></a>
-
-<p>jQuery：js扩展库</p>
-<p>mpvue：使用vue开发小程序框架</p>
-<p>ElementUI：饿了么团队开发，面对PC端ui组件库</p>
-<p>MintUI：饿了么团队开发，面对手机端ui组件库</p>
-<p>BetterScroll：轻量级滑动库</p>
-<p>swiper：滑动库</p>
-<p>Echarts：百度可视化图标库</p>
-<p>layui：面对后端工程师的ui库</p>
-<p>EasyUI：依赖jQuery的ui库</p>
-<p>Animate.css：css3动画库</p>
-<p>magic.css：css3动画库</p>
-<p>Hover.css：hover鼠标悬停效果</p>
-<p>Moment.js：时间格式化库</p>
-<p>loadas：js工具库，降低数组，字符串，对象等使用难度</p>
-<p>Nprogress: 页面顶部加载时出现进度条</p>
-<p>vue-quill-editor: 基于Vue使用的富文本编辑器</p>
-<p>marked.js: 在线转换mackdown为html</p>
-<p>showdown: 在线转换mackdown为html</p>
-<p>mavon-editor：网页markdown富文本编辑器插件 —&gt; 推荐</p>
-<p>sspai.css：少数派markdown样式表</p>
-<p>hightlight.js：代码高亮框架</p>
-<p>vue-element-admin: vue 后台管理系统</p>
-<p>iview：高质量的 UI 组件库</p>
-<p>muse-ui：三端样式一致的响应式 UI 库</p>
-<p>socket.io：实时通信聊天库</p>
-<p>normalize.css: 比reset兼容性更好的初始化样式表</p>
-]]></content>
-      <categories>
-        <category>推荐</category>
-      </categories>
-      <tags>
-        <tag>推荐</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>HTML基础知识笔记</title>
     <url>/2020/04/10/HTML%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>由于个人基础较为薄弱，所以决定重新学习前端基本内容，并将学习所了解到的内容发布到自己的博客上进行保存，即可供他人查看，也可自己翻阅</p>
@@ -224,91 +309,6 @@
       </categories>
       <tags>
         <tag>HTML</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo框架搭建博客及next主题使用</title>
-    <url>/2020/04/09/hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%8F%8Anext%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<p>自从开始学习前端开发之后就一直想拥有一个自己的博客网站来记录自己的学习及生活，奈何技术问题这个愿望一直都没有实现。当以为自己翅膀硬了去面试前端开发职位的工作时被问到有没有自己的博客主页时顿时语塞，了解到有快速开发博客的框架后便决定自己动手搭一个。</p>
-<a id="more"></a>
-
-<h2 id="框架选择"><a href="#框架选择" class="headerlink" title="框架选择"></a>框架选择</h2><p>搭建博客前了解到有不少框架可以使用，例如 hexo、hugo 和 wordpress 等等，看了介绍 hexo 的插件比较多，而且刚好在B站看到一个up主“程序羊”有出一个完整的搭建视频教程，而且 hexo 比较火热，很多问题网上都可以找到解决方法，便决定选用了 hexo 来搭建自己的博客</p>
-<h2 id="安装-hexo"><a href="#安装-hexo" class="headerlink" title="安装 hexo"></a>安装 hexo</h2><p>安装 hexo 之前要配置好 node.js 环境，由于我个人已经安装好环境，所以就直接通过 npm 来全局安装：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm i hexo -g</span><br></pre></td></tr></table></figure>
-
-<p>安装好之后可以可以通过 hexo -v 命令来查看是否安装成功及当前的版本号</p>
-<h3 id="初始化博客"><a href="#初始化博客" class="headerlink" title="初始化博客"></a>初始化博客</h3><p>成功安装之后进行初始化：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
-
-<p>初始化完成之后就会生成一个默认的模板，基本的功能及样式都会配置好</p>
-<p>通过命令运行当前博客在本地服务器 4000 端口号预览：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-
-<p>浏览器输入 localhost:4000 可正常运行，初始化后有一篇默认的 hexo 命令文章</p>
-<!--注：必须要有一篇文章才可以正常运行，否则浏览器会报错-->
-
-<h3 id="设置博客样式"><a href="#设置博客样式" class="headerlink" title="设置博客样式"></a>设置博客样式</h3><p>初始化后博客有个默认的样式 landscape，默认样式很多时候并不能满足自己的需求，我个人就比较喜欢极简的风格，所以决定选用 next 主题</p>
-<p>next 主题下载：</p>
-<p>主题都是保存在目录 themes/next 下</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-
-<p>下载好 next 样式之后，在根目录下的 _config.yml 配置 next 主题使其生效：</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br></pre></td></tr></table></figure>
-
-<p>如果配置好后没有及时生效的话可以先停止本地服务器运行，清除缓存在重新运行到本地服务器上：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean // 清除缓存</span><br><span class="line">hexo g // 重新生成</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-
-<p>浏览器重新刷新即可查看样式生效</p>
-<h3 id="新建博客文章"><a href="#新建博客文章" class="headerlink" title="新建博客文章"></a>新建博客文章</h3><p>当要写新的博客时，可以通过命令创建新的 .md 文件，文件保存在 source_posts 目录下：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo n <span class="string">"博客文章名称"</span></span><br></pre></td></tr></table></figure>
-
-<p>新建完之后可以直接通过命令进入到保存博客的文件下通过 vim 编辑器进行文章编写，或者直接用 vscode 或者 Typora 编辑器打开编写内容</p>
-<p>写完之后如果本地服务器没有刷新可以 hexo c 清除缓存重新运行即可</p>
-<p>如果要删除博客文章的话 hexo 没有删除博客的命令，可以直接到目录下删除文件就可以正常删除</p>
-<h3 id="将博客站点部署到-Github-上访问"><a href="#将博客站点部署到-Github-上访问" class="headerlink" title="将博客站点部署到 Github 上访问"></a>将博客站点部署到 Github 上访问</h3><p>如果搭建博客只在自己服务器上运行的话就太没劲了，但是如果要部署到云服务器上又要花钱购买服务器，我个人比较穷就不想去买，可以将博客免费挂载到 Github 仓库上通过仓库地址访问</p>
-<p>首先先登陆 Github 创建一个仓库，仓库名称一定要跟你 Github 的账户名一致，比如我的 GitHub 账户名为 kangzhenhao，那仓库的名称就要命名为 kangzhenhao.github.io</p>
-<p>如果要部署上要安装 hexo 的部署插件：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm i hexo-deployer-git -S</span><br></pre></td></tr></table></figure>
-
-<p>安装好后修改配置文件  _config.yml 的一项：</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">仓库链接地址</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
-
-<p>然后重新编译，并推送到 Github 仓库中：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d // 推送</span><br></pre></td></tr></table></figure>
-
-<p>如果要提示需要输入用户名和密码则输入 Github 的账户密码即可</p>
-<p>部署完成功推送之后就可以通过仓库名直接访问自己的博客了</p>
-<p>如果更新了样式云服务器上的博客需要等一下才可以正常更新，如果没有更新则清除缓存重新生成在推送到仓库即可</p>
-<h3 id="next-主题配置"><a href="#next-主题配置" class="headerlink" title="next 主题配置"></a>next 主题配置</h3><p>next 主题默认的菜单已经有几项，可按照所需来配置：</p>
-<p>我个人则只选用下面几项，以为个人水平着实没有太多内容可以填充，日后需要再进行配置</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: &#x2F;|| home</span><br><span class="line">  tags: &#x2F;tags&#x2F;|| tags</span><br><span class="line">  categories: &#x2F;categories&#x2F;|| th</span><br><span class="line">  archives: &#x2F;archives&#x2F;|| archive</span><br></pre></td></tr></table></figure>
-
-<p>此时配置好了但是点击会有报错，因为默认配置下 /后面有一个空格，要删除才可以正常跳转页面</p>
-<p>tags 页面及 categories 页面需要新建才可以正常跳转，否则会报错：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new page <span class="string">"tags"</span></span><br><span class="line">hexo new page <span class="string">"categories"</span></span><br></pre></td></tr></table></figure>
-
-<p>执行完新建页面的命令之后，source 目录下就会创建对应的文件夹，文件夹里有一个 index.md 文件，修改里面的 types 项为指定页面：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">title: tags</span><br><span class="line">date: 2017-07-10 16:36:26</span><br><span class="line">type: "tags"</span><br><span class="line"></span><br><span class="line">--------</span><br><span class="line"></span><br><span class="line">title: tags</span><br><span class="line">date: 2017-07-10 16:36:26</span><br><span class="line">type: "categories"</span><br></pre></td></tr></table></figure>
-
-<p>修改完后页面就可以正常跳转了，同时功能 next 也自动配置好，对应的分类及标签会自动归类</p>
-<p>至于更多的 next 的配置可以参考官方文档或者论坛教程去配置，我自己需要这么多功能就够了</p>
-<h3 id="编写博客注意点"><a href="#编写博客注意点" class="headerlink" title="编写博客注意点"></a>编写博客注意点</h3><p>当执行完 new 命令后，生成的文件会有一个文件头一样的段落：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">title: 文章标题</span><br><span class="line">tags: 标签，可通过数组来添加多个标签</span><br><span class="line">categories: 分类</span><br></pre></td></tr></table></figure>
-
-<p>注意：每个冒号后面必须要添加一个空格，否则会报错</p>
-<p>默认情况下 next 主题会直接展示文章内容，如果文章多的话就需要滚动页面很长时间，可以在文章摘要和正文的中间添加一行注释，next 就会设置为只显示标题还摘要并生成一个阅读全文的按钮：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="comment">&lt;!--more--&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-<p>编写完文档要推送到云端的时候，一定要执行清除缓存的命令和重新生成的命令再推送，否则不会推送成功</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>个人博客</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>next</tag>
       </tags>
   </entry>
 </search>
